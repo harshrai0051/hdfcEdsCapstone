@@ -4104,3 +4104,574 @@ main .form form .field-employer-details-panel > legend {
     gap: 10px;
     cursor: pointer;
 }
+
+main .form form .field-employer-details-panel > legend::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d52d5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' y1='13' x2='8' y2='13'/%3E%3Cline x1='16' y1='17' x2='8' y2='17'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+main .form form .field-employer-details-panel > legend::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a2e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.25s ease;
+}
+
+main .form form .field-employer-details-panel.collapsed {
+    padding-bottom: 0;
+    row-gap: 0;
+}
+
+main .form form .field-employer-details-panel.collapsed > *:not(legend) {
+    display: none !important;
+}
+
+main .form form .field-employer-details-panel.collapsed > legend::after {
+    transform: rotate(180deg);
+}
+
+/* Floating labels */
+main .form form .field-employer-details-panel .drop-down-wrapper,
+main .form form .field-employer-details-panel .text-wrapper {
+    position: relative;
+    padding-top: 12px;
+    margin: 0;
+}
+
+main .form form .field-employer-details-panel .drop-down-wrapper > label,
+main .form form .field-employer-details-panel .text-wrapper > label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 4px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #888;
+    z-index: 1;
+    line-height: 1;
+    pointer-events: none;
+    margin: 0;
+}
+
+/* Select */
+main .form form .field-employer-details-panel select {
+    height: 52px !important;
+    border-radius: 8px;
+    border: 1.5px solid #d0d5dd !important;
+    padding: 0 36px 0 14px !important;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin: 0 !important;
+    width: 100%;
+    background-color: #fff !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 18px !important;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+main .form form .field-employer-details-panel select:focus {
+    border-color: #3d52d5 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(61 82 213 / 10%);
+}
+
+/* Text input */
+main .form form .field-employer-details-panel input[type="text"] {
+    height: 52px !important;
+    border-radius: 8px;
+    border: 1.5px solid #d0d5dd !important;
+    padding: 0 14px !important;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin: 0 !important;
+    width: 100%;
+    background: #fff !important;
+}
+
+main .form form .field-employer-details-panel input[type="text"]:focus {
+    border-color: #3d52d5 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(61 82 213 / 10%);
+}
+
+/* Help text */
+main .form form .field-employer-details-panel .field-employer-company-name-helptext,
+main .form form .field-employer-details-panel .field-industry-type-helptext {
+    margin: -8px 0 0;
+    padding: 0;
+    grid-column: span 12;
+}
+
+main .form form .field-employer-details-panel .field-employer-company-name-helptext p,
+main .form form .field-employer-details-panel .field-industry-type-helptext p {
+    font-size: 0.82rem;
+    color: #777;
+    margin: 0;
+}
+
+/* Disclaimer text */
+main .form form .field-employer-details-panel .field-industry-disclaimer-text {
+    grid-column: span 12;
+    background: #eef2ff;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 4px 0 0;
+}
+
+main .form form .field-employer-details-panel .field-industry-disclaimer-text p {
+    font-size: 0.85rem;
+    color: #3d52d5;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Salary Bank Selection Panel
+   ═══════════════════════════════════════════════════════════ */
+
+main .form form .field-salary-bank-selection {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 12px;
+    padding: 0 24px 24px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 6%);
+    overflow: hidden;
+    grid-column: span 12;
+}
+
+main .form form .field-salary-bank-selection > legend {
+    width: calc(100% + 48px);
+    margin: 0 -24px;
+    background: #eef2ff;
+    border-bottom: 1px solid #dde2ec;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main .form form .field-salary-bank-selection > legend::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d52d5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='22' x2='21' y2='22'/%3E%3Cline x1='6' y1='18' x2='6' y2='11'/%3E%3Cline x1='10' y1='18' x2='10' y2='11'/%3E%3Cline x1='14' y1='18' x2='14' y2='11'/%3E%3Cline x1='18' y1='18' x2='18' y2='11'/%3E%3Cpolygon points='12 2 20 7 4 7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Radio group horizontal layout */
+main .form form .field-salary-bank-quick-select {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    border: none !important;
+    padding: 20px 0 16px !important;
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+main .form form .field-salary-bank-quick-select > legend {
+    display: none !important;
+}
+
+/* Bank icon cards */
+main .form form .field-salary-bank-quick-select .radio-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: none !important;
+    border: none !important;
+    padding: 6px 4px 4px !important;
+    cursor: pointer !important;
+    border-radius: 10px !important;
+    min-width: 68px !important;
+    width: auto !important;
+    position: relative !important;
+    transition: background 0.15s !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper:hover {
+    background: #f0f4ff !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper input[type="radio"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Icon wrapper with border */
+main .form form .field-salary-bank-quick-select .radio-wrapper label {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    width: 100% !important;
+    flex-basis: auto !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper label::before {
+    content: '' !important;
+    display: block !important;
+    width: 56px !important;
+    height: 56px !important;
+    border: 1.5px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+    background: #fff !important;
+    background-size: 40px 40px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    flex-shrink: 0 !important;
+    transition: border-color 0.15s, box-shadow 0.15s !important;
+}
+
+/* Bank-specific icons */
+main .form form .field-salary-bank-quick-select .radio-wrapper[data-id="salary-bank-quick-select"] label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23004C8F' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='60' font-size='32' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EHDFC%3C/text%3E%3C/svg%3E") !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper[data-id="salary-bank-quick-select-1"] label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23F26722' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='55' font-size='20' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EICICI%3C/text%3E%3Ctext x='50' y='75' font-size='18' font-weight='normal' fill='white' text-anchor='middle' font-family='Arial'%3EBank%3C/text%3E%3C/svg%3E") !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper[data-id="salary-bank-quick-select-2"] label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23A6192E' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='60' font-size='28' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EAXIS%3C/text%3E%3C/svg%3E") !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper[data-id="salary-bank-quick-select-3"] label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23ED1C24' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='60' font-size='26' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EKOTAK%3C/text%3E%3C/svg%3E") !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper[data-id="salary-bank-quick-select-4"] label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2322409A' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='60' font-size='32' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3ESBI%3C/text%3E%3C/svg%3E") !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper[data-id="salary-bank-quick-select-5"] label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23F26522' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='48' font-size='18' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EBank of%3C/text%3E%3Ctext x='50' y='68' font-size='18' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EBaroda%3C/text%3E%3C/svg%3E") !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper[data-id="salary-bank-quick-select-6"] label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23951B81' width='100' height='100' rx='8'/%3E%3Ctext x='50' y='48' font-size='18' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EIDFC%3C/text%3E%3Ctext x='50' y='65' font-size='16' font-weight='normal' fill='white' text-anchor='middle' font-family='Arial'%3EFirst%3C/text%3E%3C/svg%3E") !important;
+}
+
+/* Selected state */
+main .form form .field-salary-bank-quick-select .radio-wrapper input[type="radio"]:checked ~ label::before {
+    border-color: #3d52d5 !important;
+    box-shadow: 0 0 0 1px #3d52d5 !important;
+}
+
+/* Checkmark indicator */
+main .form form .field-salary-bank-quick-select .radio-wrapper input[type="radio"]:checked ~ label::after {
+    content: "✓" !important;
+    position: absolute !important;
+    top: 50px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 18px !important;
+    height: 18px !important;
+    background: #3d52d5 !important;
+    border-radius: 50% !important;
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 2px solid #fff !important;
+    z-index: 2 !important;
+    line-height: 1 !important;
+}
+
+/* Bank name text */
+main .form form .field-salary-bank-quick-select .radio-wrapper label span,
+main .form form .field-salary-bank-quick-select .radio-wrapper label::after:not(:empty) {
+    font-size: 0.75rem !important;
+    color: #555 !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+    max-width: 70px !important;
+    margin-top: 4px !important;
+}
+
+main .form form .field-salary-bank-quick-select .radio-wrapper input[type="radio"]:checked ~ label span {
+    color: #3d52d5 !important;
+    font-weight: 600 !important;
+}
+
+/* Other Banks dropdown */
+main .form form .field-salary-bank-dropdown {
+    margin: 8px 0 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    padding-top: 12px !important;
+}
+
+main .form form .field-salary-bank-dropdown > label {
+    position: absolute !important;
+    top: 12px !important;
+    left: 14px !important;
+    transform: translateY(-50%) !important;
+    background: #fff !important;
+    padding: 0 4px !important;
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    color: #888 !important;
+    z-index: 1 !important;
+    line-height: 1 !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+}
+
+main .form form .field-salary-bank-dropdown select {
+    width: 100% !important;
+    height: 48px !important;
+    border: 1.5px solid #d0d5dd !important;
+    border-radius: 8px !important;
+    padding: 0 36px 0 14px !important;
+    font-size: 0.9rem !important;
+    color: #555 !important;
+    background-color: #fff !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 14px center !important;
+    background-size: 16px !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+}
+
+main .form form .field-salary-bank-dropdown select:focus {
+    border-color: #3d52d5 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgb(61 82 213 / 10%) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Verify Email ID Panel
+   ═══════════════════════════════════════════════════════════ */
+
+main .form form .field-verify-email-id {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 12px;
+    padding: 0 24px 28px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 6%);
+    overflow: hidden;
+    row-gap: 0;
+    column-gap: 24px;
+    grid-column: span 12 !important;
+    align-items: start;
+}
+
+main .form form .field-verify-email-id > legend {
+    background: linear-gradient(135deg, #eef0fb 0%, #f0f4ff 100%);
+    border-bottom: 1px solid #dde2ec;
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+main .form form .field-verify-email-id > legend::before {
+    content: '';
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d52d5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+main .form form .field-verify-email-id > legend::after {
+    content: '';
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: transform 0.25s ease;
+}
+
+main .form form .field-verify-email-id.collapsed {
+    padding-bottom: 0;
+}
+
+main .form form .field-verify-email-id.collapsed > *:not(legend) {
+    display: none !important;
+}
+
+main .form form .field-verify-email-id.collapsed > legend {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+main .form form .field-verify-email-id.collapsed > legend::after {
+    transform: rotate(180deg);
+}
+
+/* Sub-panels layout */
+main .form form .field-primary-email-panel,
+main .form form .field-work-email-panel {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 12px !important;
+    row-gap: 10px !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    min-width: 0;
+    align-self: start;
+}
+
+main .form form .field-primary-email-panel > legend,
+main .form form .field-work-email-panel > legend {
+    display: none !important;
+}
+
+/* Email input - floating label */
+main .form form .field-primary-email-panel .field-primary-email-id,
+main .form form .field-work-email-panel .field-work-email-id {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    position: relative !important;
+    padding-top: 12px !important;
+    margin: 0 !important;
+    min-width: 0;
+}
+
+main .form form .field-primary-email-panel .field-primary-email-id .field-label,
+main .form form .field-work-email-panel .field-work-email-id .field-label {
+    position: absolute !important;
+    top: 12px !important;
+    left: 14px !important;
+    transform: translateY(-50%) !important;
+    font-size: 0.75rem !important;
+    color: #888 !important;
+    background: #fff !important;
+    padding: 0 4px !important;
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+}
+
+main .form form .field-primary-email-panel .field-primary-email-id input[type="email"],
+main .form form .field-work-email-panel .field-work-email-id input[type="email"] {
+    height: 48px !important;
+    border: 1.5px solid #d0d5dd !important;
+    border-radius: 8px !important;
+    padding: 0 14px !important;
+    font-size: 0.95rem !important;
+    color: #1a1a1a !important;
+    background: #fff !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+main .form form .field-primary-email-panel .field-primary-email-id input[type="email"]:focus,
+main .form form .field-work-email-panel .field-work-email-id input[type="email"]:focus {
+    border-color: #3d52d5 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgb(61 82 213 / 10%) !important;
+}
+
+/* Verify button */
+main .form form .field-primary-email-panel .field-primary-email-verify-button,
+main .form form .field-work-email-panel .field-work-email-verify-button {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: end !important;
+    display: flex !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+main .form form .field-primary-email-panel .field-primary-email-verify-button button,
+main .form form .field-work-email-panel .field-work-email-verify-button button {
+    height: 48px !important;
+    padding: 0 22px !important;
+    border: 1.5px solid #3d52d5 !important;
+    border-radius: 24px !important;
+    background: transparent !important;
+    color: #3d52d5 !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: background 0.2s, color 0.2s !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+}
+
+main .form form .field-primary-email-panel .field-primary-email-verify-button button:hover,
+main .form form .field-work-email-panel .field-work-email-verify-button button:hover {
+    background: #3d52d5 !important;
+    color: #fff !important;
+}
+
+/* Help text */
+main .form form .field-primary-email-panel .field-primary-email-mandatory-note,
+main .form form .field-work-email-panel .field-work-email-note {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+main .form form .field-primary-email-panel .field-primary-email-mandatory-note p,
+main .form form .field-work-email-panel .field-work-email-note p {
+    font-size: 0.82rem !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+    line-height: 1.45 !important;
+}
