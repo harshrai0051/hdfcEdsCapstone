@@ -2602,3 +2602,507 @@ main .form form .field-loan-offer-banner-text {
     margin: 0;
     grid-column: span 12;
 }
+
+main .form form .field-loan-offer-banner-text::before {
+    content: "💰";
+    font-size: 2rem;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+main .form form .field-loan-offer-banner-text p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* ===== Left section — Loan Amount & Tenure ===== */
+
+main .form form .field-loan-amount-tenure-section {
+    border: none;
+    padding: 0;
+    row-gap: 4px;
+    column-gap: 16px;
+    align-content: start;
+}
+
+main .form form .field-loan-amount-tenure-section > legend {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    border: none;
+    padding: 0 0 12px;
+    margin-bottom: 0;
+}
+
+/* Loan amount & tenure — label + value box inline */
+main .form form .field-loan-amount-inr,
+main .form form .field-loan-tenure-months {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 8px 0 0;
+}
+
+main .form form .field-loan-amount-inr > label,
+main .form form .field-loan-tenure-months > label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    white-space: nowrap;
+}
+
+main .form form .field-loan-amount-inr input,
+main .form form .field-loan-tenure-months input {
+    width: 140px;
+    height: 36px;
+    border: 1.5px solid #d0d5dd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+    padding: 0 10px;
+    background: #fff;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+/* Hide original "Range: X to Y" note — replaced by slider labels */
+main .form form .field-loan-amount-slider-note,
+main .form form .field-loan-tenure-slider-note {
+    display: none;
+}
+
+/* Formatted value display box */
+main .form form .loan-amount-display {
+    width: 140px;
+    height: 36px;
+    border: 1.5px solid #d0d5dd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+    padding: 0 8px;
+    background: #fff;
+    flex-shrink: 0;
+    margin: 0;
+    cursor: default;
+}
+
+/* Range slider wrapper */
+main .form form .loan-range-slider {
+    grid-column: span 12;
+    margin: 4px 0 8px;
+    padding: 0;
+}
+
+main .form form .loan-range-slider input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+main .form form .loan-range-slider input[type="range"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 4px;
+    width: var(--range-pct, 100%);
+    background: #f97316;
+    border-radius: 4px 0 0 4px;
+    pointer-events: none;
+}
+
+main .form form .loan-range-slider input[type="range"]::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 4px;
+    width: calc(100% - var(--range-pct, 100%));
+    background: #e0e0e0;
+    border-radius: 0 4px 4px 0;
+    pointer-events: none;
+}
+
+main .form form .loan-range-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #1e3a8a;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    position: relative;
+    margin-top: -7px;
+}
+
+main .form form .loan-range-slider input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #1e3a8a;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    position: relative;
+}
+
+main .form form .loan-range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0 0;
+}
+
+main .form form .loan-range-labels span {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+/* Proceed button */
+main .form form .field-proceed-button button {
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    width: auto;
+}
+
+main .form form .field-proceed-button button::after {
+    content: "›";
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+main .form form .field-proceed-button button:hover {
+    background: #1e40af;
+}
+
+/* ===== Right section — XPRESS Loan Summary ===== */
+
+main .form form .field-xpress-personal-loan-summary {
+    background: #fef9ec;
+    border-radius: 14px;
+    padding: 42px 20px 20px;
+    border: none;
+    position: relative;
+    row-gap: 0;
+    column-gap: 0;
+    align-content: start;
+}
+
+main .form form .field-xpress-personal-loan-summary > legend {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    right: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    float: none;
+}
+
+/* Large loan amount */
+main .form form .field-approved-loan-amount {
+    margin: 0 0 14px;
+    padding: 0;
+    grid-column: span 12;
+}
+
+main .form form .field-approved-loan-amount p {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #111;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Divider below amount */
+main .form form .field-approved-loan-amount::after {
+    content: "";
+    display: block;
+    border-top: 1.5px dashed #d4c8a0;
+    margin-top: 14px;
+}
+
+/* EMI and Rate side-by-side */
+main .form form .field-emi-amount,
+main .form form .field-rate-of-interest {
+    padding: 10px 12px 10px 14px;
+    margin: 8px 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+main .form form .field-emi-amount::before,
+main .form form .field-rate-of-interest::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 32px;
+    background: #f4c06a;
+    border-radius: 2px;
+}
+
+main .form form .field-emi-amount label,
+main .form form .field-rate-of-interest label {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    display: block;
+}
+
+main .form form .field-emi-amount p,
+main .form form .field-rate-of-interest p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+}
+
+/* Taxes */
+main .form form .field-taxes-amount {
+    padding: 10px 12px 10px 14px;
+    margin: 8px 0 0;
+    position: relative;
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+main .form form .field-taxes-amount::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 32px;
+    background: #f4c06a;
+    border-radius: 2px;
+}
+
+main .form form .field-taxes-amount label {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    display: block;
+}
+
+main .form form .field-taxes-amount p {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+}
+
+/* Processing Fee row — injected dynamically next to Taxes */
+main .form form .field-processing-fee-display {
+    padding: 10px 12px 10px 14px;
+    margin: 8px 0 0;
+    position: relative;
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+main .form form .field-processing-fee-display::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 32px;
+    background: #f4c06a;
+    border-radius: 2px;
+}
+
+main .form form .field-processing-fee-display label {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    display: block;
+}
+
+main .form form .field-processing-fee-display p {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+}
+
+/* Orange disclaimer box */
+main .form form .field-principal-offer-note {
+    background: #f97316;
+    border-radius: 10px;
+    padding: 12px 14px 12px 38px;
+    margin: 16px 0 0;
+    position: relative;
+    grid-column: span 12;
+}
+
+main .form form .field-principal-offer-note::before {
+    content: "ℹ";
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+}
+
+main .form form .field-principal-offer-note p {
+    font-size: 0.78rem;
+    color: #fff;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Continue button — same style as Proceed */
+main .form form .field-continue button,
+main .form form .field-continue-button button,
+main .form form .wizard-button-next button {
+    background: #1e3a8a;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    width: auto;
+    transition: background 0.2s;
+}
+
+main .form form .field-continue button::after,
+main .form form .field-continue-button button::after,
+main .form form .wizard-button-next button::after {
+    content: "›";
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+main .form form .field-continue button:hover,
+main .form form .field-continue-button button:hover,
+main .form form .wizard-button-next button:hover {
+    background: #1e40af;
+}
+
+main .form form .field-continue button:disabled,
+main .form form .field-continue-button button:disabled,
+main .form form .wizard-button-next button:disabled {
+    background: #b0b8d1;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Confirm (submit) button — same style as Proceed */
+main .form form .field-confirm-button {
+    margin-top: 20px;
+    grid-column: span 12;
+}
+
+main .form form .field-confirm-button button {
+    background: #1e3a8a;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: auto !important;
+    transition: background 0.2s;
+}
+
+main .form form .field-confirm-button button::after {
+    content: "›";
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+main .form form .field-confirm-button button:hover {
+    background: #1e40af;
+}
+
+main .form form .field-confirm-button button:disabled {
+    background: #b0b8d1;
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* ── Income Details Panel ───────────────────────────────── */
+main .form form .field-income-details-panel {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 12px;
+    padding: 0 24px 28px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 6%);
+    overflow: hidden;
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
+main .form form .field-income-details-panel > legend {
+    width: calc(100% + 48px);
+    margin: 0 -24px;
+    background: #eef2ff;
+    border-bottom: 1px solid #dde2ec;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
