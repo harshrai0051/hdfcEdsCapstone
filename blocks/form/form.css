@@ -1,3 +1,107 @@
+.otp-error-msg {
+  display: block;
+  color: #ff5f3f;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* PAN validation styles */
+.pan-error-message {
+  display: block;
+  color: #dc2626;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.field-pan-number.pan-invalid input {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.field-pan-number.pan-invalid input:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.field-pan-number.pan-valid input {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+}
+
+.field-pan-number.pan-valid input:focus {
+  border-color: #16a34a !important;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1) !important;
+}
+
+/* PAN input - ensure uppercase display */
+.field-pan-number input {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Email verification styles */
+.email-domain-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.email-domain-chip {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid #a5b4fc;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: #4a62b6;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  font-weight: 400;
+}
+
+.email-domain-chip:hover {
+  background: #eef2ff;
+  border-color: #3d52d5;
+}
+
+.email-verification-error {
+  display: block;
+  color: #dc2626;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.email-verification-success {
+  display: block;
+  color: #16a34a;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.field-email-id.email-invalid input {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.field-email-id.email-invalid input:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.field-email-id.email-verified input {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+}
+
+.field-email-id.email-verified input:focus {
+  border-color: #16a34a !important;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1) !important;
+}
+
 :root {
     --background-color-primary: #fff;
     --label-color: #666;
@@ -57,7 +161,7 @@
     --form-wizard-step-legend-padding: 10px;
     --form-wizard-step-legend-font-size: 1.1rem;
     --form-field-gap: 5px;
-    
+
     /* Card styling variables */
     --form-card-border-color: #e0e0e0;
     --form-card-border-radius: 4px;
@@ -138,7 +242,7 @@ main .form form .field-invalid .field-description {
     color: var(--form-error-color);
     padding-inline-start: 5px;
   }
-  
+
   /**
    * Required field indicator not required for checkboxes and radio buttons
    */
@@ -146,7 +250,7 @@ main .form form .field-invalid .field-description {
   .checkbox-wrapper > label::after {
       content: none;
   }
-  
+
   main .form form .checkbox-wrapper.field-invalid {
       flex-wrap: wrap;
   }
@@ -339,7 +443,7 @@ main .form form fieldset.cards.horizontal > .checkbox-wrapper {
 
 main .form form fieldset.cards.horizontal > .radio-wrapper > label,
 main .form form fieldset.cards.horizontal > .checkbox-wrapper > label {
-    min-width: -webkit-fill-available; 
+    min-width: -webkit-fill-available;
 }
 
 main .form form fieldset.cards > .radio-wrapper > input,
@@ -395,400 +499,13 @@ main .form form fieldset.cards > .checkbox-wrapper > label > img {
     main .form form fieldset.cards > .checkbox-wrapper {
         min-width: 100%;
     }
-    
+
     main .form form fieldset.cards.horizontal {
         flex-wrap: wrap;
     }
-    
+
     main .form form fieldset.cards.horizontal > .radio-wrapper,
     main .form form fieldset.cards.horizontal > .checkbox-wrapper {
         min-width: 100%;
     }
-}
-
-input::file-selector-button {
-    color: var(--form-upload-color);
-    background: var(--form-upload-background-color);
-    font-size: var(--form-upload-font-size);
-    text-align: center;
-}
-
-main .form button {
-    color: var(--form-button-color);
-    background: var(--form-button-background-color);
-    border: var(--form-button-border);
-    padding: var(--form-button-padding);
-    font-size: var(--form-button-font-size);
-    border-radius: unset;
-    width: 100%;
-}
-
-main form .file-wrapper > button{
-    display: flex;
-}
-
-main .form button:hover {
-    background: var(--form-button-background-hover-color);
-}
-
-main .submit-wrapper{
-    width: var(--form-submit-width);
-}
-
-main .form textarea:disabled,
-main .form select:disabled,
-main .form button:disabled {
-    background-color: var(--form-input-disable-color);
-}
-
-main .file-wrapper.decorated input[type="file"] {
-    display: none;
-}
-
-main .file-wrapper .field-dropregion {
-    background: rgb(0 0 0 / 2%);
-    border: 1px dashed var(--form-input-border-color);
-    border-radius: 4px;
-    margin: 11px 0 8px;
-    padding: 32px;
-    text-align: center;
-}
-
-/* Repeatable Styling */
-main .form form .repeat-actions {
-    grid-column: span 12;
-    order: 2;
-}
-
-main .form form .item-remove,
-main .form form .item-add {
-    overflow: unset;
-}
-
-main .form form .item-remove {
-    justify-self: end;
-    grid-column: span 12;
-    order: 1;
-}
-
-main .form form div[data-variant="addDeleteButtons"] .item-add,
-main .form form div[data-variant="addDeleteButtons"] .item-remove {
-    display: block;
-}
-
-/* End of Repeatable Styling */
-main .form .file-description{
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-top: 5px;
-}
-
-main .form .file-description .file-description-name {
-  cursor: pointer;
-  text-decoration: underline;
-  flex: 1;
-}
-
-main .file-wrapper .file-description button {
-    --form-button-padding: 15px;
-
-    width: 12px;
-    height: 12px;
-    border: none;
-    text-align: center;
-    background: var(--border-color);
-    cursor: pointer;
-    position: relative;
-    border-radius: 3px;
-}
-
-main .file-wrapper .file-description button::after{
-    content: 'X';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: var(--background-color-primary);
-    transform: translate(-50%, -50%);
-}
-
-main .form .button-wrapper button {
-    cursor:pointer
-}
-
-main .form .button-wrapper button:hover {
-    border: 3px solid var(#fff);
-    color: #fff;
-    background-color: var(--button-secondary-color);
-}
-
-main .form .button-wrapper button[disabled] {
-    cursor:auto
-}
-
-main .form .button-wrapper button[disabled]:hover {
-    border: 3px solid var(--button-secondary-color);
-    color: var(--button-secondary-color);
-    background-color: transparent;
-}
-
-/** Wizard Styling */
-main .form form .wizard  {
-  display: grid;
-  counter-reset: wizard-step-counter;
-  grid-template-columns: minmax(0, 1fr);
-  border: var(--form-wizard-border) solid var(--form-wizard-border-color);
-  background-color: var( --form-wizard-background-color);
-  gap: unset;
-  padding: 20px var(--form-wizard-padding);
-}
-
-main .form form .wizard > fieldset > legend{
-    display: none;
-}
-
-main .form form .wizard > fieldset:not(.current-wizard-step){
-    display: none;
-}
-
-main .form form .wizard .wizard-button-wrapper{
-    display: flex;
-    justify-content: end;
-    gap: 50px;
-    margin: var(--form-wizard-padding) 0;
-    width: 100%;
-    grid-column: span 12;
-}
-
-main .form form .wizard .wizard-button-wrapper .field-wrapper{
-    flex: unset;
-}
-
-.wizard-menu-items{
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-weight: var(--form-fieldset-legend-font-weight);
-    font-size: var(--form-fieldset-legend-font-size);
-    color: var(--form-fieldset-legend-color);
-    padding-bottom: var(--form-wizard-padding);
-    grid-column: span 12;
-}
-
-main .form form .wizard .wizard-menu-item {
-  counter-increment: wizard-step-counter;
-}
-
-main .form form .wizard .wizard-menu-item::before {
-  content: counter(wizard-step-counter);
-  border: 2px solid var(--form-wizard-number-color);
-  color: var(--form-wizard-number-color);
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  margin-right: 10px;
-  text-align: center;
-  line-height: 2;
-  display: inline-block;
-}
-
-main .form form .wizard .wizard-menu-active-item::before{
-  border: 2px solid var(--form-wizard-number-color);
-  background: var(--form-wizard-number-color);
-  color: var(--background-color-primary);
-  font-weight: 600;
-}
-
-@media (width >= 600px) {
-    main .form button {
-        width: unset;
-    }
-}
-
-/* wizard title on left */
-main .form form .wizard.left{
-  display: flex;
-}
-
-main .form form .wizard.left .wizard-menu-items{
-  flex-direction: column;
-  width: 300px;
-}
-
-main form .panel-wrapper {
-  display: flex;
-  padding: 0;
-  flex-direction: column;
-}
-
-main .form form .panel-wrapper{
-  display: grid;
-  grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
-  gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
-}
-
-main .form form .repeat-wrapper{
-    display: grid;
-    grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
-    gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
-}
-
-main .form form .wizard.left .panel-wrapper{
-  flex: 1;
-}
-
-@media (width >= 1200px) {
-    main .form form .form-textarea-wrapper,
-    main .form form .file-wrapper,
-    main .form form .panel-wrapper {
-        flex: 1 0 100%;
-    }
-
-    main .form form .panel-wrapper {
-        flex-flow: row wrap;
-        gap: 10px 15px;
-    }
-}
-
-main .form .form-message.success-message {
-    color: #0f5132;
-    background-color: #d1e7dd;
-    border-color: #badbcc;
-    flex: 100%;
-    grid-column: span 12;
-    padding: 10px;
-}
-
-main .form .form-message.error-message {
-    color: #842029;
-    background-color: #f8d7da;
-    border-color: #f5c2c7;
-    flex: 100%;
-    grid-column: span 12;
-    padding: 10px;
-}
-
-main .form .file-wrapper .file-drag-area {
-  border: 1px dashed var(--border-color);
-  border-radius: 5px;
-  padding: 10px 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-/* grid css */
-main .form form .field-wrapper .field-description{
-  grid-column: span 12;
-}
-
-main .form form .field-wrapper.col-12 {
-    grid-column: span 12;
-}
-
-main .form form .field-wrapper.col-11 {
-    grid-column: span 11;
-}
-
-main .form form .field-wrapper.col-10 {
-  grid-column: span 10;
-}
-
-main .form form .field-wrapper.col-9 {
-    grid-column: span 9;
-}
-
-main .form form .field-wrapper.col-8 {
-    grid-column: span 8;
-}
-
-main .form form .field-wrapper.col-7 {
-    grid-column: span 7;
-}
-
-main .form form .field-wrapper.col-6 {
-      grid-column: span 6;
-}
-
-main .form form .field-wrapper.col-5 {
-      grid-column: span 5;
-}
-
-main .form form .field-wrapper.col-4 {
-      grid-column: span 4;
-}
-
-main .form form .field-wrapper.col-3 {
-      grid-column: span 3;
-}
-
-main .form form .field-wrapper.col-2 {
-      grid-column: span 2;
-}
-
-main .form form .field-wrapper.col-1 {
-    grid-column: span 1;
-}
-
-main .form form .wizard > .field-description {
-    width: 100%;
-}
-  
-main .form form .checkbox-wrapper.field-invalid > .field-description {
-      order: 1;
-}
-
-main form .wizard > .current-wizard-step.panel-wrapper:first-of-type ~ .wizard-button-wrapper > .wizard-button-prev,
-main form .wizard > .current-wizard-step.panel-wrapper:last-of-type ~ .wizard-button-wrapper > .wizard-button-next {
-    display: none;
-}
-
-main .form form:not(.edit-mode) .captcha-wrapper{
-    display: none ;
-}
-
-main .form form .radio-group-wrapper.horizontal,
-main .form form .checkbox-group-wrapper.horizontal {
-    display: flex;
-    flex-flow: row wrap;
-    gap: inherit;
-}
-
-main .form form .radio-group-wrapper.horizontal .field-description,
-main .form form .checkbox-group-wrapper.horizontal .field-description {
-    width: 100%;
-    order: 1;
-    margin-top: 0.5rem;
-}
-
-main div.form-wrapper {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
-}
-
-/* Responsive adjustments for mobile */
-@media (width <= 599px) {
-    :root {
-        --form-field-horz-gap: 10px;
-    }
-    
-    main .form form .wizard  {
-        .wizard-menu-items {
-            gap: 20px;
-        }
-
-        margin: 0;
-    }
-}
-
-/* Expand height for multi-select dropdowns (array types) */
-main .form form select[multiple] {
-    height: calc(42px + 50px);
 }
