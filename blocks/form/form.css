@@ -3623,3 +3623,484 @@ main .form form .field-income-verification-method .radio-wrapper label {
     margin: 0 !important;
     line-height: 1.3;
 }
+
+/* Card description */
+main .form form .field-income-verification-method .iv-card-desc {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    padding-left: 26px;
+}
+
+/* Recommended badge */
+main .form form .field-income-verification-method .iv-recommended {
+    display: block;
+    background: #16a34a;
+    color: #fff;
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    letter-spacing: 0.3px;
+}
+
+main .form form .field-income-verification-method .radio-wrapper:has(.iv-recommended) {
+    padding-bottom: 36px;
+}
+
+/* ── Bank Selector Panel ────────────────────────────────── */
+main .form form .field-loan-type-selection {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 12px;
+    padding: 0 24px 24px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 6%);
+    overflow: hidden;
+}
+
+main .form form .field-loan-type-selection > legend {
+    width: calc(100% + 48px);
+    margin: 0 -24px;
+    background: #eef2ff;
+    border-bottom: 1px solid #dde2ec;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main .form form .field-loan-type-selection > legend::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d52d5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='22' x2='21' y2='22'/%3E%3Cline x1='6' y1='18' x2='6' y2='11'/%3E%3Cline x1='10' y1='18' x2='10' y2='11'/%3E%3Cline x1='14' y1='18' x2='14' y2='11'/%3E%3Cline x1='18' y1='18' x2='18' y2='11'/%3E%3Cpolygon points='12 2 20 7 4 7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Picker layout */
+main .form form .field-loan-type-selection .bank-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    flex-wrap: nowrap;
+}
+
+main .form form .field-loan-type-selection .bank-cards-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    flex-wrap: nowrap;
+    flex: 1;
+    overflow-x: auto;
+}
+
+/* Bank card */
+main .form form .field-loan-type-selection .bank-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: 6px 4px 4px;
+    cursor: pointer;
+    border-radius: 10px;
+    min-width: 58px;
+    width: auto !important;
+    position: relative;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+
+main .form form .field-loan-type-selection .bank-card:hover {
+    background: #f0f4ff;
+}
+
+main .form form .field-loan-type-selection .bank-card.selected {
+    background: #f0f4ff;
+}
+
+/* Icon wrapper */
+main .form form .field-loan-type-selection .bank-icon-wrap {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    border: 1.5px solid #e0e0e0;
+    overflow: visible;
+    flex-shrink: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .form form .field-loan-type-selection .bank-icon-wrap svg {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+main .form form .field-loan-type-selection .bank-card.selected .bank-icon-wrap {
+    border-color: #3d52d5;
+    box-shadow: 0 0 0 1px #3d52d5;
+}
+
+/* Checkmark badge below icon */
+main .form form .field-loan-type-selection .bank-card.selected .bank-icon-wrap::after {
+    content: "✓";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: #3d52d5;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    z-index: 2;
+    line-height: 1;
+}
+
+main .form form .field-loan-type-selection .bank-card-name {
+    font-size: 0.72rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 66px;
+    margin-top: 6px;
+}
+
+main .form form .field-loan-type-selection .bank-card.selected .bank-card-name {
+    color: #3d52d5;
+    font-weight: 600;
+}
+
+/* Other bank dropdown */
+main .form form .field-loan-type-selection .bank-other-wrap {
+    min-width: 160px;
+    max-width: 200px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+main .form form .field-loan-type-selection .bank-other-select {
+    width: 100%;
+    height: 46px;
+    border: 1.5px solid #d0d5dd;
+    border-radius: 24px;
+    padding: 0 36px 0 16px;
+    font-size: 0.9rem;
+    color: #555;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+main .form form .field-loan-type-selection .bank-other-select:focus {
+    border-color: #3d52d5;
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(61 82 213 / 10%);
+}
+
+/* ── Type of Loan Panel ─────────────────────────────────── */
+main .form form .field-type-of-loan-panel {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 12px;
+    padding: 0 24px 28px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 6%);
+    overflow: hidden;
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
+main .form form .field-type-of-loan-panel > legend {
+    width: calc(100% + 48px);
+    margin: 0 -24px;
+    background: #eef2ff;
+    border-bottom: 1px solid #dde2ec;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+main .form form .field-type-of-loan-panel > legend::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d52d5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='22' x2='21' y2='22'/%3E%3Cline x1='6' y1='18' x2='6' y2='11'/%3E%3Cline x1='10' y1='18' x2='10' y2='11'/%3E%3Cline x1='14' y1='18' x2='14' y2='11'/%3E%3Cline x1='18' y1='18' x2='18' y2='11'/%3E%3Cpolygon points='12 2 20 7 4 7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+main .form form .field-type-of-loan-panel > legend::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a2e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.25s ease;
+}
+
+main .form form .field-type-of-loan-panel.collapsed {
+    padding-bottom: 0;
+    row-gap: 0;
+}
+
+main .form form .field-type-of-loan-panel.collapsed > *:not(legend) {
+    display: none !important;
+}
+
+main .form form .field-type-of-loan-panel.collapsed > legend::after {
+    transform: rotate(180deg);
+}
+
+/* Floating label on dropdown */
+main .form form .field-type-of-loan-panel .drop-down-wrapper {
+    position: relative;
+    padding-top: 12px;
+    margin: 0;
+}
+
+main .form form .field-type-of-loan-panel .drop-down-wrapper > label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 4px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #888;
+    z-index: 1;
+    line-height: 1;
+    pointer-events: none;
+    margin: 0;
+}
+
+main .form form .field-type-of-loan-panel select {
+    height: 52px !important;
+    border-radius: 8px;
+    border: 1.5px solid #d0d5dd !important;
+    padding: 0 36px 0 14px !important;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin: 0 !important;
+    width: 100%;
+    background-color: #fff !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 18px !important;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+main .form form .field-type-of-loan-panel select:focus {
+    border-color: #3d52d5 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(61 82 213 / 10%);
+}
+
+/* ── Work Email ID Panel ────────────────────────────────── */
+main .form form .field-work-email-id-panel {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 12px;
+    padding: 0 24px 28px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 6%);
+    overflow: hidden;
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
+main .form form .field-work-email-id-panel > legend {
+    width: calc(100% + 48px);
+    margin: 0 -24px;
+    background: #eef2ff;
+    border-bottom: 1px solid #dde2ec;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+main .form form .field-work-email-id-panel > legend::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d52d5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22 6 12 13 2 6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+main .form form .field-work-email-id-panel > legend::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a2e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.25s ease;
+}
+
+main .form form .field-work-email-id-panel.collapsed {
+    padding-bottom: 0;
+    row-gap: 0;
+}
+
+main .form form .field-work-email-id-panel.collapsed > *:not(legend) {
+    display: none !important;
+}
+
+main .form form .field-work-email-id-panel.collapsed > legend::after {
+    transform: rotate(180deg);
+}
+
+/* Unified email + verify box */
+main .form form .field-work-email-id-panel .field-work-email-id {
+    grid-column: span 12 !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    align-items: stretch;
+    border: 1.5px solid #d0d5dd;
+    border-radius: 8px;
+    background: #fff;
+    position: relative;
+    margin: 0;
+}
+
+main .form form .field-work-email-id-panel .field-work-email-id > label {
+    top: 0 !important;
+    left: 14px !important;
+    transform: translateY(-50%) !important;
+    z-index: 2;
+}
+
+main .form form .field-work-email-id-panel .field-work-email-id input[type="email"] {
+    border: none !important;
+    border-radius: 0 !important;
+    height: 52px !important;
+    flex: 1;
+    padding: 0 14px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+main .form form .field-work-email-id-panel .field-work-email-id input[type="email"]:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+main .form form .field-work-email-id-panel .field-work-email-id > button {
+    border: none !important;
+    border-left: 1.5px solid #d0d5dd !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #3d52d5 !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 0 20px !important;
+    height: 52px !important;
+    width: auto !important;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: none !important;
+    align-self: center;
+    margin: 0 !important;
+}
+
+main .form form .field-work-email-id-panel .field-work-email-id > button:hover {
+    background: #f0f4ff !important;
+}
+
+main .form form .field-work-email-id-panel .field-verify-work-email-button {
+    display: none !important;
+}
+
+/* Help text */
+main .form form .field-work-email-id-panel .field-work-email-id-helptext {
+    margin: -8px 0 0;
+    padding: 0;
+    grid-column: span 12;
+}
+
+main .form form .field-work-email-id-panel .field-work-email-id-helptext p {
+    font-size: 0.82rem;
+    color: #777;
+    margin: 0;
+}
+
+/* ── Employer Details Panel ─────────────────────────────── */
+main .form form .field-employer-details-panel {
+    background: #fff;
+    border: 1px solid #dde2ec;
+    border-radius: 12px;
+    padding: 0 24px 28px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 6%);
+    overflow: hidden;
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
+main .form form .field-employer-details-panel > legend {
+    width: calc(100% + 48px);
+    margin: 0 -24px;
+    background: #eef2ff;
+    border-bottom: 1px solid #dde2ec;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
